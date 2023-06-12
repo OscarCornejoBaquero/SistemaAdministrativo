@@ -16,20 +16,34 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
+
     <!-- Styles -->
     <link href="{{ asset('assets/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('assets/css/sb-admin-2.min.css') }}" rel="stylesheet">
 </head>
 <body>
-<div id="app">
-    <nav >
+<div id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
         @include('layouts.navbar')
-    </nav>
+        <div id="content-wrapper" class="d-flex flex-column">
+            <div id="content">
+                @include('layouts.topbar')
+                <div class="container-fluid">
+                    @yield('content')
+                </div>
+            </div>
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Universidad de Guayaquil - Facultad de Ciencias Matemáticas y Físicas - Carrera Software</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
 
-    <main class="py-4">
-
-        @yield('content')
-    </main>
 </div>
 
 <!-- Bootstrap core JavaScript-->
@@ -42,5 +56,12 @@
 <!-- Custom scripts for all pages-->
 <script src="{{ asset('assets/js/sb-admin-2.min.js') }} "></script>
 
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+
+<script src="https://assets.startbootstrap.com/js/sb-customizer.js"></script>
+
+@yield('scripts')
 </body>
 </html>
